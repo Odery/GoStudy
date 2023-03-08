@@ -6,7 +6,7 @@ import (
 )
 var numToGuess int = 42
 
-func mains(){
+func main(){
 	trysToGuess := 0
 	for{
 		guessed := rand.Intn(100) +1
