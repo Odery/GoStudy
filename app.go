@@ -6,8 +6,12 @@ import (
 
 func main() {
 
+	oop := 1
+	for i := 0; i<11; i++{
+		oop += 1
+		fmt.Println(oop)
+	}
 
-	price := (23 - 23) * (50 - 36) / (44 - 23) + 36
-	fmt.Println(price)
+	fmt.Println(oop)
 	
 }
