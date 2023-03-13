@@ -2,11 +2,10 @@ package main
 
 import (
 	"fmt"
+	"unicode/utf8"
 )
 
 func main() {
 
-	var maxchar rune = 122
-
-	fmt.Printf("%c",maxchar)
+	fmt.Printf("%c",utf8.MaxRune)
 }
