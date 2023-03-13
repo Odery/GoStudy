@@ -6,10 +6,7 @@ import (
 
 func main() {
 
-	var pi rune = 960
-	var alpha rune = 940
-	var omega rune = 969
-	var smilik rune = 128515
+	var maxchar rune = 122
 
-	fmt.Printf("%c %c %c %c",pi,alpha,omega,smilik)
+	fmt.Printf("%c",maxchar)
 }
