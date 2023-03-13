@@ -6,12 +6,10 @@ import (
 
 func main() {
 
-	oop := 1
-	for i := 0; i<11; i++{
-		oop += 1
-		fmt.Println(oop)
-	}
+	var pi rune = 960
+	var alpha rune = 940
+	var omega rune = 969
+	var smilik rune = 128515
 
-	fmt.Println(oop)
-	
+	fmt.Printf("%c %c %c %c",pi,alpha,omega,smilik)
 }

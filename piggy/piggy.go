@@ -3,6 +3,7 @@ Save some money to buy a gift for your friend. Write a program that randomly pla
 nickels ($0.05), dimes ($0.10), and quarters ($0.25) into an empty piggy bank until it
 contains at least $20.00. Display the running balance of the piggy bank after each deposit, 
 formatting it with an appropriate width and precision. 
+Display the running balance of the piggy bank after each deposit in dollars (for example, $1.05).
 */
 
 package main
@@ -27,6 +28,7 @@ func main(){
 		case 2:
 			piggyBank += quarter
 		}
+		fmt.Printf("Currently in piggybank: %.4v\n",piggyBank)
 	} 
 	fmt.Println("Piggy-bank contains:")
 	fmt.Printf("%12.2f",piggyBank)
