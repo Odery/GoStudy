@@ -2,10 +2,16 @@ package main
 
 import (
 	"fmt"
-	"unicode/utf8"
+	"strconv"
 )
 
 func main() {
 
-	fmt.Printf("%c",utf8.MaxRune)
+	var goopher = "yes"
+	var gopher = "true"
+	var Gopher = "True"
+
+	fmt.Printf("%v%v%v\n",goopher, gopher, Gopher)
+
+	fmt.Println(strconv.ParseBool(Gopher))
 }
