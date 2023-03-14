@@ -13,24 +13,20 @@ import(
 
 func main(){
 	inputs := [8]string{"true","yes","1","false","no","0","gibrisch","Hello World"}
+	var launch [8]bool
 
-	for _, e := range(inputs){
+	for i, e := range(inputs){
 		switch e{
-		case "true":
+		case "true", "yes", "1":
 			fmt.Printf("The %v is True\n", e)
-		case "yes":
+			launch[i] = true
+		case "false", "no", "0":
 			fmt.Printf("The %v is True\n", e)
-		case "1":
-			fmt.Printf("The %v is True\n", e)
-		case "false":
-			fmt.Printf("The %v is False\n", e)
-		case "no":
-			fmt.Printf("The %v is False\n", e)
-		case "0":
-			fmt.Printf("The %v is False\n", e)
+			launch[i] = false
 		default:
 			fmt.Printf("The %v is not a bool!\n",e)
-
+			launch[i] = false
 		}
 	}
+	fmt.Println(launch)
 }
