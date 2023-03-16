@@ -12,32 +12,43 @@ a byte.
 type to the other (string, byte, rune).
  To wrap around at the edges of the alphabet, the Caesar cipher exercise made use of
 a comparison. Solve this exercise without any if statements by using modulus (%).
+
+Also make a func to cipher text.
+Bonus: rather than write your plain text message in uppercase letters with no spaces,
+use the strings.Replace and strings.ToUpper functions to remove spaces and uppercase the
+string before you cipher it.
+Once you’ve ciphered a plain text message, check your work by deciphering the
+ciphered text with the same keyword
 */
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main(){
 	cipherText := "CSOITEUIWUIZNSROCNKFD"
+	plainText := "Hello my name is Joe"
 	keyword := "GOLANG"
 
-	fmt.Println(decipher(cipherText, keyword))
-	fmt.Println(decipherNew(cipherText, keyword))
+	fmt.Printf("Deciphered given text: %v\n",decipherNew(cipherText, keyword))
+
+	fmt.Printf("Ciphered text: %v\n", cipher(plainText, keyword))
+	fmt.Printf("Deciphered: %v\n", decipherNew(cipher(plainText,keyword),keyword))
 
 }
 
-// With range V1
+// With range Version1
 func decipher(cipherText string, keyword string) string{
 	var deciphered string
 
 	for i, c := range(cipherText){
 		keyRune := rune(keyword[(i % 6)])
 		decipheredChar := (c + ('A' - keyRune))
-		fmt.Printf("%v ", decipheredChar)
 		deciphered += fmt.Sprintf("%c",(((decipheredChar - 64) % 26 + 25) % 26 + 65))
 	}
-	fmt.Println()
 	return deciphered
 }
 
@@ -54,4 +65,19 @@ func decipherNew(cipherText string, keyword string) string{
 		deciphered += fmt.Sprintf("%c",((int(decipheredChar) - x) % e + e) % e + x )
 	}
 	return deciphered
+}
+
+func cipher(plainText string, keyword string) string{
+	var ciphered string
+	plainText = strings.Replace(plainText, " ", "", -1)
+	plainText = strings.ToUpper(plainText)
+
+	for i, c := range(plainText){
+		keyRune := rune(keyword[i % 6])
+		cipheredChar := (c + (keyRune - 'A'))
+		x,y := 65,90
+		e := (y - x + 1)
+		ciphered += fmt.Sprintf("%c",((int(cipheredChar) - x) % e + e) % e + x )
+	}
+	return ciphered
 }

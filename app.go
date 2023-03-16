@@ -2,24 +2,15 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 func main() {
 
-	x := byte(65)
-	y := byte(90)
+	plainText := "Gooogle is bad"
 
-	input_value := byte(63)
+	plainText = strings.Replace(plainText, " ", "", -1)
+	plainText = strings.ToUpper(plainText)
 
-	e := (y - x + 1)
-
-	result := ((input_value - x) % e + e) % e + x
-
-	fmt.Printf("%v\t%v\n", result, e)
-
-
-	deciphered := fmt.Sprintf("%c",((61 - x) % e + e) % e + x )
-
-	fmt.Printf("%v\n", deciphered)
-
+	fmt.Println(plainText)
 }
