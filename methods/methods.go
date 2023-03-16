@@ -15,8 +15,8 @@ type fahrenheit float32
 
 func main(){
 	var tempC celsius = 32
-	var tempK kelvin = 320
-	var tempF fahrenheit = 120
+	var tempK kelvin = 0
+	var tempF fahrenheit = -23
 	fmt.Printf("%.5v C = %.5v K = %.5v F\n",tempC,tempC.kelvin(),tempC.fahrenheit())
 	fmt.Printf("%.5v K = %.5v C = %.5v F\n",tempK,tempK.celsius(),tempK.fahrenheit())
 	fmt.Printf("%.5v F = %.5v K = %.5v C\n",tempF,tempF.kelvin(),tempF.celsius())
