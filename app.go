@@ -2,16 +2,24 @@ package main
 
 import (
 	"fmt"
-	"strconv"
 )
 
 func main() {
 
-	var goopher = "yes"
-	var gopher = "true"
-	var Gopher = "True"
+	x := byte(65)
+	y := byte(90)
 
-	fmt.Printf("%v%v%v\n",goopher, gopher, Gopher)
+	input_value := byte(63)
 
-	fmt.Println(strconv.ParseBool(Gopher))
+	e := (y - x + 1)
+
+	result := ((input_value - x) % e + e) % e + x
+
+	fmt.Printf("%v\t%v\n", result, e)
+
+
+	deciphered := fmt.Sprintf("%c",((61 - x) % e + e) % e + x )
+
+	fmt.Printf("%v\n", deciphered)
+
 }
