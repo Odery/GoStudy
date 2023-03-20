@@ -1,0 +1,22 @@
+Write a program that displays temperature conversion 
+tables. The tables should use equals signs (=) and pipes 
+(|) to draw lines, with a header section:
+=======================
+| ºC | ºF |
+=======================
+| -40.0 | -40.0 |
+| ... | ... |
+=======================
+The program should draw two tables. The first table has 
+two columns, with ºC in the first column and ºF in the 
+second column. Loop from –40º C through 100º C in 
+steps of 5º using the temperature conversion methods 
+from lesson 13 to fill in both columns.
+After completing one table, implement a second table with the columns reversed, converting from ºF to ºC.
+Drawing lines and padding values is code you can reuse for any data that needs to be 
+displayed in a two-column table. Use functions to separate the table drawing code from 
+the code that calculates the temperatures for each row.
+
+Implement a drawTable function that takes a first-class function as a parameter and calls it 
+to get data for each row drawn. Passing a different function to drawTable should result in 
+different data being displayed.
