@@ -6,13 +6,15 @@ import (
 
 type celsius float32
 type kelvin float32
+type sensor = func() kelvin
+type getRowF = func(row int) (string, string)
 
 func main() {
-	var temp celsius = 23 
-	var temmp kelvin = 300
+	ctok := celsiusToKelvin
 
-	fmt.Printf("Type: %T is %[1]v K\n", celsiusToKelvin(temp))
-	fmt.Println(temmp.celsius())
+	fmt.Println()
+	fmt.Println(ctok(22))
+	fmt.Printf("%T",ctok)
 }
 
 func celsiusToKelvin(c celsius) kelvin{
@@ -21,4 +23,17 @@ func celsiusToKelvin(c celsius) kelvin{
 
 func (k kelvin) celsius() celsius {
 	return celsius(k - 273.15)
+}
+
+func takesFunc(s sensor, i int) int{
+
+	func(i int){
+		fmt.Println(i)
+	}(1)
+
+	return 0
+}
+
+func drawTable(rows int, r getRowF){
+
 }
