@@ -1,0 +1,6 @@
+ Extend listing 16.8 to display all the chess pieces at their starting positions using 
+the characters kqrbnp for black pieces along the top and uppercase KQRBNP for white 
+pieces on the bottom.
+ Write a function that nicely displays the board.
+ Instead of strings, use [8][8]rune to represent the board. Recall that rune literals are 
+surrounded with single quotes and can be printed with the %c format verb.
