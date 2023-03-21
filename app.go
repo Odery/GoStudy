@@ -5,10 +5,6 @@ import (
 )
 
 func main() {
-	var arr [5]string
-
-	arr = [5]string{"Neptun","Zeus","Hades"}
-
 	planets := [...]string{ 
 		"Mercury",
 		"Venus",
@@ -19,6 +15,11 @@ func main() {
 		"Uranus",
 		"Neptune", 
 	   }
-	fmt.Printf("%#v\n", arr)
-	fmt.Println(planets)
+
+	iceGiants := planets[2:4]
+	fmt.Println(iceGiants)
+
+	panic("Panicking")
+
+	fmt.Println(iceGiants)
 }
