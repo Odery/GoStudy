@@ -5,21 +5,7 @@ import (
 )
 
 func main() {
-	planets := [...]string{ 
-		"Mercury",
-		"Venus",
-		"Earth",
-		"Mars",
-		"Jupiter",
-		"Saturn",
-		"Uranus",
-		"Neptune", 
-	   }
+	emSlice := make([]int, 10)
 
-	iceGiants := planets[2:4]
-	fmt.Println(iceGiants)
-
-	panic("Panicking")
-
-	fmt.Println(iceGiants)
+	fmt.Println(emSlice)
 }

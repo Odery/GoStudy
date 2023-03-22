@@ -1,0 +1,3 @@
+Write a program that uses a loop to continuously append an element to a slice. Print out 
+the capacity of the slice whenever it changes. Does append always double the capacity 
+when the underlying array runs out of room?
