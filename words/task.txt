@@ -1,0 +1,6 @@
+Write a function to count the frequency of words in a string of text and return a map 
+of words with their counts. The function should convert the text to lowercase, and 
+punctuation should be trimmed from words. The strings package contains several helpful 
+functions for this task, including Fields, ToLower, and Trim.
+Use your function to count the frequency of words in the following passage and then 
+display the count for any word that occurs more than once
