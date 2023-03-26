@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 )
 
 const (
@@ -17,15 +18,26 @@ func (u universe) show(){
 			if cell{
 				fmt.Print("*")
 			}else{
-				fmt.Print("/")
-			}
+				fmt.Print(" ")
+			}12
 		}
 		fmt.Println()
 	}
 }
 
+func (u universe) seed(){
+	for _, row := range(u){
+		for i := range(row){
+			if rand.Intn(100) <= 25{
+				row[i] = true
+			}
+		}
+	}
+}
+
 func main(){
 	uni := newUnivese()
+	uni.seed()
 	uni.show()
 }
 
