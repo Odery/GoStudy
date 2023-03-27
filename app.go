@@ -2,14 +2,15 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 func main() {
-	var t int = 10
+	fmt.Println("================")
+	fmt.Println("================")
+	fmt.Println("================")
+	fmt.Println("================")
+	time.Sleep(time.Second)
+	fmt.Println("\033[2J")
 
-	if t ==10{
-		fmt.Println("true")
-	}else if t % 10 == 0{
-		fmt.Println("True as well")
-	}
 }
