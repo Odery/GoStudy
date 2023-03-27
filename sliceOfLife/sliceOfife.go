@@ -51,7 +51,7 @@ func (u universe) Neighbors(row,cell int) int{
 			}
 		}
 	}
-	//Remove 1 if cell is currently alive
+	//Remove 1 if cell is currently alive (must not count itself)
 	if u.CellAlive(row,cell){
 		aliveMembers --
 	}
