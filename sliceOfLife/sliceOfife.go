@@ -19,7 +19,7 @@ func (u universe) show(){
 				fmt.Print("*")
 			}else{
 				fmt.Print(" ")
-			}12
+			}
 		}
 		fmt.Println()
 	}
@@ -35,10 +35,32 @@ func (u universe) seed(){
 	}
 }
 
+func (u universe) cellAlive(row, cell int) bool{
+	row, cell = _normalize(row, cell)
+	return u[row][cell]
+}
+
+func (u universe) neighbors(row,cell int) int{
+	row, cell = _normalize(row, cell)
+	var aliveMembers int
+	for r:= -1; r < 2; r++{
+		for i:= -1; i < 2; i++{
+			if u.cellAlive(row + r, cell + i){
+				aliveMembers++
+			}
+		}
+	}
+	//Remove 1 if cell is currently alive
+	if u.cellAlive(row,cell){
+		aliveMembers --
+	}
+	return aliveMembers
+}
+
 func main(){
 	uni := newUnivese()
-	uni.seed()
 	uni.show()
+	fmt.Println(uni.neighbors(2,2))
 }
 
 func newUnivese() universe{
@@ -47,4 +69,8 @@ func newUnivese() universe{
 		uni[i] = make([]bool, width)
 	}
 	return uni
+}
+
+func _normalize(row, cell int) (int,int){
+	return ((row + width) % width), ((cell + height) % height)
 }
