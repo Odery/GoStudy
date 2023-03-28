@@ -1,0 +1,4 @@
+Write a program that displays the JSON encoding of the three rover landing sites
+in listing 21.8. The JSON should include the name of each landing site and use 
+struct tags as shown in listing 21.10. To make the output friendlier, make use 
+of the MarshalIndent function from the json package. 
