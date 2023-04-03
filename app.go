@@ -2,30 +2,35 @@ package main
 
 import (
 	"fmt"
-	"bytes"
 )
 
+type celsius float64
+
 func main() {
-	input := "Brandbury is at: 130.00º20.00'0.00\" H, 27.00º13.00'2.20\" E"
+	fmt.Println()
 
-	// Convert the string to a slice of runes
-	runes := []rune(input)
+	m := make(map[int] interface{})
 
-	// Create a bytes.Buffer to store the converted runes as bytes
-	var buf bytes.Buffer
+	m[1] = true
+	m[2] = 23.1
+	m[3] = 44
+	m[4] = celsius(20.9)
+	m[5] = 1 + 3i
 
-	// Iterate through the runes and write each rune as a byte to the buffer
-	for _, r := range runes {
-		buf.WriteRune(r)
+	for i, v := range m{
+		switch e := v.(type){
+		case celsius:
+			fmt.Printf("Element %v is value of celsius: %v\n", i, e)
+		case int:
+			fmt.Printf("Element %v is value of int: %v\n", i, e)
+		case float64:
+			fmt.Printf("Element %v is value of float: %v\n", i, e)
+		case string:
+			fmt.Printf("Element %v is value of string: %v\n", i, e)
+		case bool:
+			fmt.Printf("Element %v is value of bool: %v\n", i, e)
+		case complex128:
+			fmt.Printf("Element %v is value of complex: %v\n", i, e)
+		}
 	}
-
-	// Get the byte array from the buffer
-	byteArray := buf.Bytes()
-
-	// Print the byte array
-	fmt.Println(byteArray)
-
-	// Convert the byte array back to a string and print it
-	output := string(byteArray)
-	fmt.Println(output)
 }
