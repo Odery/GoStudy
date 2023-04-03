@@ -2,22 +2,30 @@ package main
 
 import (
 	"fmt"
+	"bytes"
 )
 
-type coordinate struct{
-	d,m,s float64
-	h rune
-}
-
-type location struct{
-	name string
-	lat, lon coordinate
-}
-
-func (l location) String() string{
-	return fmt.Sprintf("%s is at: %0.2fº%0.2f'%0.2f\" %c, %0.2fº%0.2f'%0.2f\" %c", l.name, l.lat.d, l.lat.m, l.lat.s, l.lat.h, l.lon.d,l.lon.m, l.lon.s, l.lon.h)
-}
 func main() {
-	l := location{name: " Elysium Planitia", lat: coordinate{d: 4, m: 30, h: 'N'}, lon: coordinate{d: 135, m: 54, h: 'E'} }
-	fmt.Println(l)
+	input := "Brandbury is at: 130.00º20.00'0.00\" H, 27.00º13.00'2.20\" E"
+
+	// Convert the string to a slice of runes
+	runes := []rune(input)
+
+	// Create a bytes.Buffer to store the converted runes as bytes
+	var buf bytes.Buffer
+
+	// Iterate through the runes and write each rune as a byte to the buffer
+	for _, r := range runes {
+		buf.WriteRune(r)
+	}
+
+	// Get the byte array from the buffer
+	byteArray := buf.Bytes()
+
+	// Print the byte array
+	fmt.Println(byteArray)
+
+	// Convert the byte array back to a string and print it
+	output := string(byteArray)
+	fmt.Println(output)
 }
