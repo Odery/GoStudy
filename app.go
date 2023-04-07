@@ -2,11 +2,20 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
 )
+
 func main() {
-	fmt.Println(rand.Intn(2))
-	fmt.Println(rand.Intn(2))
-	fmt.Println(rand.Intn(2))
-	fmt.Println(rand.Intn(2))
+	fmt.Println("")
+
+	m := &map[string]int{}
+
+	s := &[3]string{}
+
+	(*m)["bob"] = 3
+
+	s[1] = "Bob"
+
+
+	fmt.Printf("%T\n", m)
+	fmt.Printf("%T\n", s)
 }
