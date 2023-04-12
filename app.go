@@ -2,20 +2,22 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
-func reset(a *[10]int){
-	for i := range a{
-		a[i] = 0
-	}
+type talker interface{
+	talk() string
 }
+type laser int
 
+func (l laser) talk() string{
+	return (strings.Repeat("pew", int(l)))
+}
+func shout(t talker){
+	fmt.Println(strings.ToUpper(t.talk()))
+}
 func main() {
-	fmt.Println()
+	la := laser(2)
 
-	arr := [10]int{0,1,2,3,4,5,6,7,8,9}
-
-	reset(&arr)
-
-	fmt.Println(arr)
+	shout(&la)
 }
