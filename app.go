@@ -4,18 +4,18 @@ import (
 	"fmt"
 )
 
+func reset(a *[10]int){
+	for i := range a{
+		a[i] = 0
+	}
+}
+
 func main() {
-	fmt.Println("")
+	fmt.Println()
 
-	m := &map[string]int{}
+	arr := [10]int{0,1,2,3,4,5,6,7,8,9}
 
-	s := &[3]string{}
+	reset(&arr)
 
-	(*m)["bob"] = 3
-
-	s[1] = "Bob"
-
-
-	fmt.Printf("%T\n", m)
-	fmt.Printf("%T\n", s)
+	fmt.Println(arr)
 }
