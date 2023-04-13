@@ -1,0 +1,5 @@
+A knight blocks Arthur’s path. Our hero is empty-handed, represented by a nil value for 
+leftHand *item. Implement a character struct with methods such as pickup(i *item) and 
+give(to *character). Then use what you’ve learned in this lesson to write a script that has 
+Arthur pick up an item and give it to the knight, displaying an appropriate description 
+for each action
