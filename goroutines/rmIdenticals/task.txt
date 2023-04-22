@@ -1,0 +1,4 @@
+It’s boring to see the same line repeated over and over again. Write a pipeline element (a 
+goroutine) that remembers the previous value and only sends the value to the next stage 
+of the pipeline if it’s different from the one that came before. To make things a little
+simpler, you may assume that the first value is never the empty string.
