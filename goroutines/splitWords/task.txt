@@ -1,0 +1,3 @@
+Sometimes it’s easier to operate on words than on sentences. Write a pipeline element 
+that takes strings, splits them up into words (you can use the Fields function from the 
+strings package), and sends all the words, one by one, to the next pipeline stage.
