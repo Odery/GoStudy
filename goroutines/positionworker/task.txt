@@ -1,0 +1,2 @@
+Using listing 31.5 as a starting point, change the code so that the delay time gets a half a 
+second longer with each move.
