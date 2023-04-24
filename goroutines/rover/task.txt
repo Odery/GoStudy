@@ -1,0 +1,2 @@
+Using the RoverDriver type as a starting point, define Start and Stop methods
+and associated commands and make the rover obey them. 
