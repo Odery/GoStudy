@@ -111,7 +111,6 @@ func (o *Occupier) Move(p image.Point) bool{
 }
 
 type Rover struct{
-	mu sync.Mutex
 	name string
 	earth chan string
 	mg *MarsGrid
@@ -143,9 +142,6 @@ func (r *Rover) Drive(){
 }
 
 func (r *Rover) seekLife(){
-	r.mu.Lock()
-	defer r.mu.Unlock()
-	
 	for moved := false; !moved; {
 		switch c := rand.Intn(4); c {
 			case 0:
