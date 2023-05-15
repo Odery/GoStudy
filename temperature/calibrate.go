@@ -23,7 +23,8 @@ func calibrate(s sensor, offset kelvin) sensor{
 	}
 }
 
-func main(){
+//change to main to run
+func init(){
 	sensor := calibrate(realSensor, 5)
 	fSensor := calibrate(fakeSensor, 500)
 	fmt.Println(sensor())
