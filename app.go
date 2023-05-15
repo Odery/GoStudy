@@ -1,20 +1,22 @@
 package main
 
-import (
-	"log"
-)
+import "fmt"
 
-func main(){
-
-	h := Human{}
-	h.safeToWalk = true
-	log.Println(h)
+type Person struct {
+	name string
+	belongings []int
 }
 
-type Human struct{
-	Legs
-}
+func main() {
+	bob := new(Person)
 
-type Legs struct{
-	safeToWalk bool
+	for i:= 0; i < 10; i++ {
+		bob.belongings = append(bob.belongings, i)
+	}
+
+	sl := make([]int, 5)
+
+	copy(sl, bob.belongings[5:])
+	fmt.Println(bob.name)
+	fmt.Println(sl)
 }
