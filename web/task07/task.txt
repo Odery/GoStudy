@@ -16,3 +16,11 @@ fmt.Fprint(c, "Content-Type: text/plain\r\n")
 "\r\n"
 
 Look in your browser "developer tools" under the network tab. Compare the RESPONSE HEADERS from the previous file with the RESPONSE HEADERS in your new solution.
+
+Part 2:
+Print to standard out (the terminal) the REQUEST method and the REQUEST URI from the REQUEST LINE.
+
+Add this data to your REPONSE so that this data is displayed in the browser.
+
+Part 3:
+Add code to respond to the following METHODS & ROUTES: GET / GET /apply POST /apply
