@@ -46,7 +46,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 
 func cookie(w http.ResponseWriter, r *http.Request) {
 	c, err := r.Cookie("Visits")
-	cookieValue := ""
+	var cookieValue string
 	if err != nil {
 		cookieValue = "No visits yet"
 	} else {
