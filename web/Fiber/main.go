@@ -13,7 +13,11 @@ func main() {
 
 	app.Get("/",index)
 
-	app.ListenTLS(":443", "./cert.pem", "./key.pem")
+	//Setting up SSL certificate and key
+	cert := "./cert.pem"
+	key := "./key.pem"
+
+	app.ListenTLS(":443", cert, key)
 }
 
 func index(c *fiber.Ctx) error{
