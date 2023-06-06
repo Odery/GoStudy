@@ -27,9 +27,24 @@ func main() {
 		return
 	}
 
-	b.Handle("/hello", func(c tele.Context) error {
-		return c.Send("Hello!")
-	})
+	b.Handle("/start", startEndpoint)
+	b.Handle("myID", idEndpoint)
+	b.Handle(tele.OnText, textEndpoint)
 
 	b.Start()
+}
+
+//Starts the bot
+func startEndpoint(c tele.Context) error {
+	return c.Send("You are now connected")
+}
+
+//Prints user ID
+func idEndpoint(c tele.Context) error {
+	return c.Send(c.Sender().ID)
+}
+
+//Replys the same message
+func textEndpoint(c tele.Context) error {
+	c.Send(c.Text())
 }
